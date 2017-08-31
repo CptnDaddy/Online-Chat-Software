@@ -2,10 +2,10 @@
 
 class mysql_lib {
 	
-	private $host = '';
-	private $username = '';
-	private $password = '';
-	private $database = '';
+	private $host = 'localhost';
+	private $username = 'ocs';
+	private $password = 'njmqCTmWNKJKhD4p';
+	private $database = 'ocs';
 	private $con = null;
 	
 	public function mysql_lib() {

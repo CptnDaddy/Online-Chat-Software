@@ -13,13 +13,13 @@
 }
 /* valid color */
 .input-field input[type=text].valid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
+  border-bottom: 1px solid #004d40;
+  box-shadow: 0 1px 0 0 #004d40;
 }
 /* invalid color */
 .input-field input[type=text].invalid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
+  border-bottom: 1px solid #d50000;
+  box-shadow: 0 1px 0 0 #d50000;
 }
 
 
@@ -34,13 +34,33 @@
 }
 /* valid color */
 .input-field input[type=password].valid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
+  border-bottom: 1px solid #004d40;
+  box-shadow: 0 1px 0 0 #004d40;
 }
 /* invalid color */
 .input-field input[type=password].invalid {
+  border-bottom: 1px solid #d50000;
+  box-shadow: 0 1px 0 0 #d50000;
+}
+
+/* label focus color */
+.input-field input[type=email]:focus + label {
+  color: #000;
+}
+/* label underline focus color */
+.input-field input[type=email]:focus {
   border-bottom: 1px solid #000;
   box-shadow: 0 1px 0 0 #000;
+}
+/* valid color */
+.input-field input[type=email].valid {
+  border-bottom: 1px solid #004d40;
+  box-shadow: 0 1px 0 0 #004d40;
+}
+/* invalid color */
+.input-field input[type=email].invalid {
+  border-bottom: 1px solid #d50000;
+  box-shadow: 0 1px 0 0 #d50000;
 }
 
 /* icon prefix focus color */
@@ -48,5 +68,41 @@
   color: #000;
 }
 .input-field {
-  color:orange;
+  color:black;
 }  
+
+canvas {
+    display:block;
+    position: fixed;
+    z-index: -1;
+}
+
+#login, #register {
+	margin-top: 8%;
+}
+
+
+html, body {
+  height: 100%;
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+main {
+	padding-bottom:203px; /* Height of the footer element */
+}
+
+#footer {
+   position:absolute;
+   bottom:0;
+   height:203px;
+   width:100%;
+}
+
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
