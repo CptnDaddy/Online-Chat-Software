@@ -37,63 +37,61 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
-		<div class="wrapper">
-			<div id="particles-js"></div>
-			<header>
-				<nav>
-					<div class="nav-wrapper cyan darken-3">
-						<a href="#!" class="brand-logo center"><img src="img/ico.png"width="56px" height="56px" align="center">&nbsp;Online Chat</a>
-					</div>
-				</nav>
-			</header>
-			
-			<main>	
-				<div id="login" class="row center-align ">
-					<div class="col l4 s12 offset-l4">
-						<div class="card-panel z-depth-5">
-							<h5>Login</h5>
-							<form method=post>
-								<div class="input-field">
-									<input id="username" name="username" type="text" class="validate center-align" style="max-width: 400px" maxlength="20" required>
-									<label for="username">Benutzername</label>
-								</div>
-								<div class="input-field">
-									<input id="passwort" name="password" type="password" class="validate center-align" style="max-width: 400px" required>
-									<label for="passwort">Passwort</label>
-								</div>
-								<button class="btn waves-effect waves-light teal darken-4" type="submit" name="login">Login<i class="material-icons right">chevron_right</i></button>
-								<p class="center-align">Noch keinen Account? <a href="#" onclick="switchLogin()">Jetzt registrieren!</a></p>
-							</form>
-						</div>
+		<div id="particles-js"></div>
+		<header>
+			<nav>
+				<div class="nav-wrapper cyan darken-3">
+					<a href="#!" class="brand-logo center"><img src="img/ico.png"width="56px" height="56px" align="center">&nbsp;Online Chat</a>
+				</div>
+			</nav>
+		</header>
+		
+		<main>	
+			<div id="login" class="row center-align ">
+				<div class="col l4 s12 offset-l4">
+					<div class="card-panel z-depth-5">
+						<h5>Login</h5>
+						<form method=post>
+							<div class="input-field">
+								<input id="username" name="username" type="text" class="validate center-align" style="max-width: 400px" maxlength="20" required>
+								<label for="username">Benutzername</label>
+							</div>
+							<div class="input-field">
+								<input id="passwort" name="password" type="password" class="validate center-align" style="max-width: 400px" required>
+								<label for="passwort">Passwort</label>
+							</div>
+							<button class="btn waves-effect waves-light teal darken-4" type="submit" name="login">Login<i class="material-icons right">chevron_right</i></button>
+							<p class="center-align">Noch keinen Account? <a href="#" onclick="switchLogin()">Jetzt registrieren!</a></p>
+						</form>
 					</div>
 				</div>
-				<div id="register" class="row center-align hide">
-					<div class="col l4 s12 offset-l4">
-						<div class="card-panel z-depth-5">
-							<h5>Registrieren</h5>
-							<form method=post>
-								<div class="input-field">
-									<input id="username" name="username" type="text" class="validate center-align" style="max-width: 400px" maxlength="20" required>
-									<label for="username">Benutzername</label>
-								</div>
-								<div class="input-field">
-									<input id="email" name="email" type="email" class="validate center-align" style="max-width: 400px" maxlength="50" required>
-									<label for="email">Email</label>
-								</div>
-								<div class="input-field">
-									<input id="passwort" name="password" type="password" class="validate center-align" style="max-width: 400px" pattern=".{8,20}"
-									title="Passwort muss mindestens 8 bis 20 Zeichen enthalten" required>
-									<label for="passwort">Passwort</label>
-								</div>
-								<button class="btn waves-effect waves-light teal darken-4" type="submit" name="register">Registrieren<i class="material-icons right">chevron_right</i></button>
-								<p class="center-align">Du hast schon einen Account? <a href="#" onclick="switchLogin()">Jetzt einloggen!</a></p>
-							</form>
-						</div>
+			</div>
+			<div id="register" class="row center-align hide">
+				<div class="col l4 s12 offset-l4">
+					<div class="card-panel z-depth-5">
+						<h5>Registrieren</h5>
+						<form method=post>
+							<div class="input-field">
+								<input id="username" name="username" type="text" class="validate center-align" style="max-width: 400px" maxlength="20" required>
+								<label for="username">Benutzername</label>
+							</div>
+							<div class="input-field">
+								<input id="email" name="email" type="email" class="validate center-align" style="max-width: 400px" maxlength="50" required>
+								<label for="email">Email</label>
+							</div>
+							<div class="input-field">
+								<input id="passwort" name="password" type="password" class="validate center-align" style="max-width: 400px" pattern=".{8,20}"
+								title="Passwort muss mindestens 8 bis 20 Zeichen enthalten" required>
+								<label for="passwort">Passwort</label>
+							</div>
+							<button class="btn waves-effect waves-light teal darken-4" type="submit" name="register">Registrieren<i class="material-icons right">chevron_right</i></button>
+							<p class="center-align">Du hast schon einen Account? <a href="#" onclick="switchLogin()">Jetzt einloggen!</a></p>
+						</form>
 					</div>
 				</div>
-			</main>
+			</div>
+		</main>
 		<?php include "inc/footer.html"; ?>
-		</div>
 	
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>

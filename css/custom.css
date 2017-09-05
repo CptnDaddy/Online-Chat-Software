@@ -79,30 +79,10 @@ canvas {
 
 #login, #register {
 	margin-top: 8%;
+	margin-bottom: 13.1%;
 }
 
 
 html, body {
   height: 100%;
-}
-
-#wrapper {
-	min-height:100%;
-	position:relative;
-}
-main {
-	padding-bottom:203px; /* Height of the footer element */
-}
-
-#footer {
-   position:absolute;
-   bottom:0;
-   height:203px;
-   width:100%;
-}
-
-/* IE 6 */
-* html #footer {
-   position:absolute;
-   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
