@@ -4,7 +4,7 @@ class mysql_lib {
 	
 	private $host = 'localhost';
 	private $username = 'ocs';
-	private $password = 'njmqCTmWNKJKhD4p';
+	private $password = 'R7SOHJgdx7kp5S4s';
 	private $database = 'ocs';
 	private $con = null;
 	
