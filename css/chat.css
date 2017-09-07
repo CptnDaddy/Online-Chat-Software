@@ -49,7 +49,7 @@ body {
 		background-image: url(../img/chats.jpeg);
 		background-repeat: repeat;
 		background-attachment: fixed;
-		margin-bottom: 180px;
+		margin-bottom: 130px;
 	}
 }
 
@@ -61,7 +61,7 @@ body {
 		background-image: url(../img/chats.jpeg);
 		background-repeat: repeat;
 		background-attachment: fixed;
-		margin-bottom: 200px;
+		margin-bottom: 150px;
 	}
 }
 
@@ -115,4 +115,15 @@ body {
 
 .room:hover {
 	cursor:pointer;
+}
+
+/* Testing */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
