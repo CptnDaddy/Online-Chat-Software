@@ -1,5 +1,5 @@
 <?php 
-    require("lib/mysql_lib.php");
+    require("../lib/mysql_lib.php");
     
     $mysql = new mysql_lib();
     $mysql->connectToDatabase();
