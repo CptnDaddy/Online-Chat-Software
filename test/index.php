@@ -61,7 +61,7 @@
 				
 			</div>
 			<form id="sendMessage">
-				<textarea class="sendmessage"></textarea>
+				<textarea id="sendmessage" class="sendmessage"></textarea>
 				<button class="sendbutton">Senden</button>
 				
 			</form>

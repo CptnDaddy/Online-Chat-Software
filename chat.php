@@ -85,18 +85,20 @@ function getRandomWord($len) {
 		</main>
 		<footer id="footer" class="chatinput page-footer cyan darken-3">
 			<div class="container">
+			<form id="sendmessage">
 				<div class="row center">
 					<div class="col m2 l2 hide-on-small-only">
 						<img src="img/default.png" class="circle" height="100px" />
 					</div>
 					<div class="col s9 m8 l9">
-						<textarea class="materialize-textarea"></textarea>
+						<textarea id="chatbox" name="chattext" class="materialize-textarea"></textarea>
 					</div>
 					<div class="col s1 m2 l1">
 						<button class="btn waves-effect waves-light cyan darken-4"><i class="large material-icons">send</i></button>
 					</div>
 				</div>
 			</div>
+			</form>
 		</footer>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="js/materialize.min.js"></script>
