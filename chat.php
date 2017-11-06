@@ -72,10 +72,10 @@ function getRandomWord($len) {
 				$toggle = false;
 				for($x = 1; $x <= 20; $x++) {
 					if($toggle) {
-						echo "<tr><td><div class='message left mleft z-depth-4'>" . getRandomWord(random_int(5, 200)) . " ($x)<div class='time'>18:12</div></div></td></tr>";
+						echo "<tr><td><div class='message left mleft z-depth-4'>" . getRandomWord(rand(5, 200)) . " ($x)<div class='time'>18:12</div></div></td></tr>";
 						$toggle = false;
 					} else {
-						echo "<tr><td><div class='message right mright z-depth-4'>" . getRandomWord(random_int(5, 200)) . " ($x)<div class='time'>18:12</div></div></td></tr>";
+						echo "<tr><td><div class='message right mright z-depth-4'>" . getRandomWord(rand(5, 200)) . " ($x)<div class='time'>18:12</div></div></td></tr>";
 						$toggle = true;
 					}
 				}
