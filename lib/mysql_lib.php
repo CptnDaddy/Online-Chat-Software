@@ -2,7 +2,7 @@
 
 class mysql_lib {
 	
-	private $host = '172.16.112.32';
+	private $host = 'localhost';
 	private $username = 'ocs';
 	private $password = 'ers1234';
 	private $database = 'ocs';
@@ -19,7 +19,8 @@ class mysql_lib {
 	public function connectToDatabase() {
 		@$this->con = new mysqli($this->host, $this->username, $this->password, $this->database);
 		if ($this->con->connect_errno) {
-			echo "Can't connect to database.";
+			echo "Can't connect to database.\n";
+			echo $this->con->connect_error;
 			exit();
 		}
 	}
