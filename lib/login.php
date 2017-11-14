@@ -43,6 +43,7 @@ function login($con, $username, $password) {
 		$_SESSION['username'] = $username;
 		$_SESSION['email'] = $email;
 		$_SESSION['userid'] = $id;
+		$_SESSION['roomid'] = 1;
 		header("Location: chat.php");
 	} else {
 		header("Location: index.php?s=0");

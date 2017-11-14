@@ -49,7 +49,12 @@ function getRandomWord($len) {
 				</div>
 			</li>
 			<ul class="collection">
-				<?php for($i = 1; $i < 20; $i++) { echo '<a onclick="changeRoom(' . $i . ')" class="collection-item room"><span class="badge">0/20</span>Raum ' . $i . '</a>'; }?>
+				<?php
+				// TODO: Datenbank auslesen
+				for($i = 1; $i < 20; $i++) {
+				    echo '<a onclick="changeRoom(' . $i . ')" class="collection-item room"><span class="badge">0/20</span>Raum ' . $i . '</a>';
+				}
+				?>
 		   </ul>
 		   <li style="padding-top: 20px;"></li>
 		</ul>
@@ -66,9 +71,9 @@ function getRandomWord($len) {
 		</header>
 		<main>
 			<div class="row" id="chatwindow">
-				<table>
+<!-- 				<table> -->
 				<?php 
-				
+				/*
 				$toggle = false;
 				for($x = 1; $x <= 20; $x++) {
 					if($toggle) {
@@ -78,9 +83,9 @@ function getRandomWord($len) {
 						echo "<tr><td><div class='message right mright z-depth-4'>" . getRandomWord(rand(5, 200)) . " ($x)<div class='time'>18:12</div></div></td></tr>";
 						$toggle = true;
 					}
-				}
+				}*/
 				?>
-				</table>
+<!-- 				</table> -->
 			</div>
 		</main>
 		<footer id="footer" class="chatinput page-footer cyan darken-3">
@@ -91,7 +96,7 @@ function getRandomWord($len) {
 						<img src="img/default.png" class="circle" height="100px" />
 					</div>
 					<div class="col s9 m8 l9">
-						<textarea id="chatbox" name="chattext" class="materialize-textarea"></textarea>
+						<textarea id="chatbox" maxlength=200 name="chattext" class="materialize-textarea"></textarea>
 					</div>
 					<div class="col s1 m2 l1">
 						<button class="btn waves-effect waves-light cyan darken-4"><i class="large material-icons">send</i></button>
