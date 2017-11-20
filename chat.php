@@ -71,7 +71,6 @@ function getRandomWord($len) {
 		</header>
 		<main>
 			<div class="row" id="chatwindow">
-<!-- 				<table> -->
 				<?php 
 				/*
 				$toggle = false;
@@ -85,7 +84,6 @@ function getRandomWord($len) {
 					}
 				}*/
 				?>
-<!-- 				</table> -->
 			</div>
 		</main>
 		<footer id="footer" class="chatinput page-footer cyan darken-3">
