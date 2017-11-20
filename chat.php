@@ -49,7 +49,7 @@ function getRandomWord($len) {
 					</div>
 				</div>
 			</li>
-			<ul class="collection">
+			<ul id="rooms" class="collection">
 				<?php
 				// TODO: Datenbank auslesen
 				/*for($i = 1; $i < 20; $i++) {
