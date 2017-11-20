@@ -1,5 +1,6 @@
 <?php 
 require("lib/mysql_lib.php");
+require("lib/chatlib.php");
 
 $mysql = new mysql_lib();
 $mysql->connectToDatabase();
@@ -51,9 +52,10 @@ function getRandomWord($len) {
 			<ul class="collection">
 				<?php
 				// TODO: Datenbank auslesen
-				for($i = 1; $i < 20; $i++) {
+				/*for($i = 1; $i < 20; $i++) {
 				    echo '<a onclick="changeRoom(' . $i . ')" class="collection-item room"><span class="badge">0/20</span>Raum ' . $i . '</a>';
-				}
+				}*/
+				listRooms($mysql->getConnection());
 				?>
 		   </ul>
 		   <li style="padding-top: 20px;"></li>
