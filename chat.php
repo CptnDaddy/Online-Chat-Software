@@ -10,11 +10,7 @@ if (!isset($_SESSION['username'])) {
 	header("Location: index.php?s=4");
 }
 
-function getRandomWord($len) {
-	$word = array_merge(range('a', 'z'), range('A', 'Z'));
-	shuffle($word);
-	return substr(implode($word), 0, $len);
-}
+
 
 //echo "<h1>" . $_SESSION['username'] . "</h1>";
 ?>
