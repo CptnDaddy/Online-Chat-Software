@@ -22,12 +22,6 @@
 				max-height: 435px;
 				overflow-y: scroll;
 			}
-			.message {
-				padding: 20px 0 20px 0;
-			}
-			.message:hover {
-				background-color: lightgray;
-			}
 			.sendmessage {
 				position: absolute;
 				width: 744px;
@@ -53,11 +47,12 @@
 				
 			}
 		</style>
+		<link type="text/css" rel="stylesheet" href="../css/chat.css" media="screen" />
 	</head>
 	<body>
 		<div class="chatbox">
 			<div class="messages" id="messages">
-				<?php for($i = 0; $i < 50; $i++) { echo "<div class='message'>$i</div>"; }?>
+				<?php //for($i = 0; $i < 50; $i++) { echo "<div class='message'>$i</div>"; }?>
 				
 			</div>
 			<form id="sendMessage">
@@ -65,7 +60,15 @@
 				<button class="sendbutton">Senden</button>
 				
 			</form>
+			
 		</div>
+			<table>
+				<tr>
+					<td>
+						<div class="message mleft">Hi test test test test</div>
+					</td>
+				</tr>
+			</table>
 		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" ></script>
 		<script src="../lib/ChatLib.js" type="text/javascript"></script>
 	</body>

@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 			<div id="login" class="row center-align ">
 				<div class="col l4 s12 offset-l4">
 					<div class="card-panel z-depth-5">
-						<h5>Login</h5>
+						<h5>Login</h5>   <!--Eingabe der Einlogdaten  -->
 						<form method=post>
 							<div class="input-field">
 								<input id="username" name="username" type="text" class="validate center-align" style="max-width: 400px" maxlength="20" required>
