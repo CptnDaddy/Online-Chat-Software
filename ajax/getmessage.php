@@ -2,10 +2,12 @@
 	require("../lib/mysql_lib.php");
 	
 	$mysql = new mysql_lib();
+	//Verbinden zur Datenbank
 	$mysql->connectToDatabase();
 	
 	session_start();
 	if(isset($_GET['r'])) {
+	    //Holen der Nachrichten nach zeit geordnet
 	    $stmt = $mysql->getConnection()->prepare("(select * from message where fk_room = ? order by time desc limit 25) order by id asc");
 	    $stmt->bind_param("i", $_GET['r']);
 	    $stmt->execute();

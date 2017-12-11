@@ -34,7 +34,7 @@ if (!isset($_SESSION['username'])) {
 	</head>
 	
 	<body>
-	
+	<!--Side nav-->
 		<ul id="slide-out" class="side-nav fixed z-depth-2">
 			<li class="center no-padding">
 				<div class="cyan darken-3 white-text" style="height: 280px;">
