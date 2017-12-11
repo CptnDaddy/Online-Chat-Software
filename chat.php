@@ -84,7 +84,7 @@ if (!isset($_SESSION['username'])) {
 				?>
 			</div>
 		</main>
-		<footer id="footer" class="chatinput page-footer cyan darken-3">
+		<footer id="footer" class="chatinput page-footer cyan darken-3"> <!--Anfang des Footers-->
 			<div class="container">
 			<form id="sendmessage">
 				<div class="row center">

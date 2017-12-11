@@ -103,6 +103,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 			});
 
 		<?php 
+		//Verschiedenen Ausgaben je nach Fall
 			if(isset($_GET['s'])) {
 				if($_GET['s'] == "0") {
 					echo 'Materialize.toast("Login fehlgeschlagen!", 4000);';
@@ -121,7 +122,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 		?>
 
 		var login = true;
-
+		//Wechsel Zwischen Registrieren und Einloggen
 		function switchLogin() {
 			if(login) {
 				$("#login").fadeOut("slow");
