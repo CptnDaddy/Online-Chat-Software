@@ -4,6 +4,10 @@ footer {
   padding-left: 300px;
 }
 
+main {
+	height: 100%;
+}
+
 body {
   backgroud: white;
 }
@@ -44,30 +48,33 @@ body {
 @media screen and (min-width: 300px) {
 	#chatwindow {
 		top: 40px;
-		height: 40%;
+		min-height: 100%;
 		width: 100%;
-		background-image: url(../img/chats.jpeg);
-		background-repeat: repeat;
-		background-attachment: fixed;
-		margin-bottom: 130px;
+		margin-bottom: 150px;
 	}
 }
 
 @media screen and (min-width: 993px) {
 	#chatwindow {
 		top: 40px;
-		height: 40%;
+		min-height: 100%;
 		width: 100%;
-		background-image: url(../img/chats.jpeg);
-		background-repeat: repeat;
-		background-attachment: fixed;
 		margin-bottom: 150px;
 	}
+}
+
+#chatwindow {
+	background: url("../img/chats.jpeg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .time {
 	padding-left: 10px;
 	text-align: right;
+	right: 0;
 	font-size: 0.8em;
 	color: #8a8a8a;
 	display: inline-block;
@@ -87,7 +94,7 @@ body {
 }
 
 .message {
-	width:auto;
+/* 	width:auto; */
 	max-width: 600px;
 	word-break: break-all;
 	height:auto;
@@ -106,6 +113,7 @@ body {
 	text-align:left;
 	background-color: #bfffdf;
 	color: #00555b;
+	
 }
 .mleft {
 	text-align: right;

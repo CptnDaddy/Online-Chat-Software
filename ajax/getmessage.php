@@ -16,13 +16,28 @@
 	        $result = $stmt->get_result();
 	        while ($row = $result->fetch_array(MYSQLI_BOTH)) {
 	            if($row['fk_user'] == $_SESSION['userid']){
-                    echo "<table>";
-    	                echo "<tr><td><div class='message right mright z-depth-4'>" . $row['text'] . "<div class='time'>" . $row['time'] . "</div></div></td></tr>";
-	                echo "</table>";
+	                echo "<div class='col' style='width:100%'>";
+                        echo "<div class='container message right mright z-depth-4'>";
+        	                echo "<div class='col s12'>";
+                                echo "<div>" . $row['text'] . "</div>";
+                            echo "</div>";
+    	                echo "</div>";
+	                echo "</div>";
 	            }else{
-	                echo "<table>";
-                        echo "<tr><td><div class='message left mleft z-depth-4'>" . $row['text'] . "<div class='time'>" . $row['time'] . "</div> <img class='left' src='./img/default.png' width='50' height='50' /></div></td></tr>";
-    	            echo "</table>";
+	                echo "<div class='col' style='width:100%'>";
+    	                echo "<div width='100%' class='container message left mleft z-depth-4'>";
+        	                echo "<div class='row'>";
+            	                echo "<div class='col m2 l2'>";
+            	                    echo "<img class='left' src='./img/default.png' width='80' height='80' />";
+            	                echo "</div>";
+            	                echo "<div class='container col s12 m10 l10' style='text-align: left;'>" . $row['text'] . "</div>";
+        	                echo "</div>";
+        	                echo "<div class='row' style='margin-bottom: 0;'>";
+                                echo "<div class='time'>" . $row['time'] . "</div>";
+        	                echo  "</div>";
+    	                echo "</div>";
+	                echo  "</div>";
+                    //echo "<tr><td><div class='message left mleft z-depth-4'>" . $row['text'] . "<div class='time'>" . $row['time'] . "</div> <img class='left' src='./img/default.png' width='50' height='50' /></div></td></tr>";
 	            }
 	        }
 	    } else {
