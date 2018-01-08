@@ -101,6 +101,15 @@ if (!isset($_SESSION['username'])) {
 			</div>
 			</form>
 		</footer>
+		<div id="modal1" class="modal bottom-sheet">
+            <div class="modal-content">
+              <h4>Modal Header</h4>
+              <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+          </div>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="js/materialize.min.js"></script>
 		<script src="lib/ChatLib.js"></script>
