@@ -103,11 +103,24 @@ if (!isset($_SESSION['username'])) {
 		</footer>
 		<div id="modal1" class="modal bottom-sheet">
             <div class="modal-content">
-              <h4>Modal Header</h4>
-              <p>A bunch of text</p>
+              <h4>Online</h4>
+              <ul class="collection">
+                  <li class="collection-item avatar">
+                  	<img src="img/default.png" alt class="circle" height="100px">
+                  	<span class="title">Benutzer</span>
+                  </li>
+                  <li class="collection-item avatar">
+                  	<img src="img/default.png" alt class="circle" height="100px">
+                  	<span class="title">Benutzer</span>
+                  </li>
+                  <li class="collection-item avatar">
+                  	<img src="img/default.png" alt class="circle" height="100px">
+                  	<span class="title">Benutzer</span>
+                  </li>
+              </ul>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
             </div>
           </div>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
