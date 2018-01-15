@@ -8,7 +8,7 @@
 	session_start();
 	if(isset($_GET['r'])) {
 	    //Holen der Nachrichten, nach zeit geordnet
-	    $stmt = $mysql->getConnection()->prepare("(select * from message where fk_room = ? order by time desc limit 25) order by id asc");
+	    $stmt = $mysql->getConnection()->prepare("(select * from getmessages where fk_room = ? order by time desc limit 25) order by id asc");
 	    $stmt->bind_param("i", $_GET['r']);
 	    $stmt->execute();
 // 	    echo $stmt->field_count;
@@ -28,7 +28,7 @@
     	                echo "<div width='100%' class='container message left mleft z-depth-4'>";
         	                echo "<div class='row'>";
             	                echo "<div class='col m2 l2'>";
-            	                    echo "<img class='left' src='./img/default.png' width='80' height='80' />";
+            	                    echo "<img title='" . $row['username'] . "' class='left' src='./img/default.png' width='80' height='80' />";
             	                echo "</div>";
             	                echo "<div class='container col s12 m10 l10' style='text-align: left;'>" . $row['text'] . "</div>";
         	                echo "</div>";

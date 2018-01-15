@@ -123,6 +123,7 @@ body {
 
 .room:hover {
 	cursor:pointer;
+	background: lightgray;
 }
 
 /* Testing */

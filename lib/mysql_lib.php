@@ -2,7 +2,7 @@
 
 class mysql_lib {
 	
-	private $host = '172.16.112.21';
+	private $host = '172.16.112.23';
 	private $username = 'ocs';
 	private $password = 'ers1234';
 	private $database = 'ocs';
