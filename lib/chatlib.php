@@ -14,7 +14,7 @@ function listRooms($con) {
 			if($stmt2->field_count > 0) {
 				$result2 = $stmt2->get_result();
 				while ($row2 = $result2->fetch_array(MYSQLI_BOTH)) {
-		            echo '<li onclick="changeRoom(' . $row['id'] . ')" class="collection-item room"><span class="badge"><a class="modal-trigger" style="padding: 0; line-height: 20px; height: 20px; display: inline-block;" href="#modal1">' . $row2['currentusers'] . '/' . $row['maxusers'] . '</a></span>' . $row['name'] . '</li>';
+		            echo '<li onclick="changeRoom(' . $row['id'] . ')" class="collection-item room"><span class="badge"><a onclick="loadOnline()" class="modal-trigger" style="padding: 0; line-height: 20px; height: 20px; display: inline-block;" href="#modal1">' . $row2['currentusers'] . '/' . $row['maxusers'] . '</a></span>' . $row['name'] . '</li>';
 				}
 			} else {
 				echo '<a onclick="changeRoom(' . $row['id'] . ')" class="collection-item room"><span class="badge">0/' . $row['maxusers'] . '</span>' . $row['name'] . '</a>';

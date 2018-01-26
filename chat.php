@@ -1,4 +1,5 @@
 <?php 
+
 require("lib/mysql_lib.php");
 require("lib/chatlib.php");
 
@@ -8,6 +9,22 @@ $mysql->connectToDatabase();
 session_start();
 if (!isset($_SESSION['username'])) {
 	header("Location: index.php?s=4");
+}
+
+if(isset($POST['changepic'])) {
+	if (move_uploaded_file($_FILES['profilepic']['tmp_name'], "/uploads/" . $_SESSION['username'] . ".png")) {
+		$stmt = $mysql->getConnection()->prepare("Update users set haspic = 1 where id = ?");
+		$stmt->bind_param("i", $_SESSION['userid']);
+		$stmt->execute();
+		$stmt->close();
+		$_SESSION['haspic'] = true;
+	} else {
+		//printf("error");
+		print_r($_FILES);
+	}
+	print_r($_FILES);
+	echo "<br><br><br><br><br><br><br><br><br><br><br>";
+	
 }
 
 
@@ -39,7 +56,16 @@ if (!isset($_SESSION['username'])) {
 			<li class="center no-padding">
 				<div class="cyan darken-3 white-text" style="height: 280px;">
 					<div class="row">
-						<img style="margin-top: 5%;" width="100" height="100" src="img/default.png" class="circle responsive-img" />
+						<div class="bildcontainer">
+						<?php  if($_SESSION['haspic']) { ?>
+							<img style="margin-top: 5%;" width="100" height="100" src="uploads/<?php echo $_SESSION['username'];?>.png" class="circle responsive-img profilepic" />
+						<?php  } else { ?>
+							<img style="margin-top: 5%;" width="100" height="100" src="img/default.png" class="circle responsive-img profilepic" />
+						<?php  } ?>
+							<div class="pichover">
+								<a class="waves-effect waves-light btn modal-trigger" href="#changepic"><i class="large material-icons">create</i></a>
+							</div>
+						</div>
 						<p style="margin-top: -1%; font-size: 26px;"><?php echo $_SESSION['username'] ?></p>
 						<p><a href="lib/logout.php" class="btn waves-effect waves-light cyan darken-4"><i class="large material-icons">power_settings_new</i></a></p>
 					</div>
@@ -102,27 +128,31 @@ if (!isset($_SESSION['username'])) {
 			</form>
 		</footer>
 		<div id="modal1" class="modal bottom-sheet">
-            <div class="modal-content">
-              <h4>Online</h4>
-              <ul class="collection">
-                  <li class="collection-item avatar">
-                  	<img src="img/default.png" alt class="circle" height="100px">
-                  	<span class="title">Benutzer</span>
-                  </li>
-                  <li class="collection-item avatar">
-                  	<img src="img/default.png" alt class="circle" height="100px">
-                  	<span class="title">Benutzer</span>
-                  </li>
-                  <li class="collection-item avatar">
-                  	<img src="img/default.png" alt class="circle" height="100px">
-                  	<span class="title">Benutzer</span>
-                  </li>
-              </ul>
+            <div class="modal-content" id="onlinemodal">
             </div>
             <div class="modal-footer">
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
             </div>
           </div>
+		<div id="changepic" class="modal">
+		  <form method="post" enctype="multipart/form-data">
+			<div class="modal-content">
+			    <div class="file-field input-field">
+			      <div class="btn">
+			        <span>Datei</span>
+			        <input type="file" name="profilepic" accept=".png,.gif,.jpg,.jpeg">
+			        <input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+			      </div>
+			      <div class="file-path-wrapper">
+			        <input class="file-path validate" type="text">
+			      </div>
+			    </div>
+			</div>
+			<div class="modal-footer">
+				<input href="#!" type="submit" value="Hochladen" name="changepic" class="waves-effect waves-green btn-flat">
+			</div>
+		  </form>
+		</div>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="js/materialize.min.js"></script>
 		<script src="lib/ChatLib.js"></script>
