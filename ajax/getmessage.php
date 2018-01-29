@@ -29,9 +29,9 @@
         	                echo "<div class='row'>";
             	                echo "<div class='col m2 l2'>";
             	                if($row['haspic']) {
-            	                	echo "<a href='' class='tooltipped' data-position='bottom' data-delay='50' title='" . $row['username'] . "'><img class='left circle' src='./uploads/" . $row['username'] . ".png' width='80' height='80' /></a>";
+            	                	echo "<div class='tooltip'><img class='left circle' src='./uploads/" . $row['username'] . ".png' width='80' height='80' /><span class='tooltiptext'>" . $row['username'] . "</span></div>";
             	                } else {
-            	                    echo "<a href='' class='tooltipped' data-position='bottom' data-delay='50' title='" . $row['username'] . "'><img class='left circle' src='./img/default.png' width='80' height='80' /></a>";
+            	                    echo "<div class='tooltip'><img class='left circle' src='./img/default.png' width='80' height='80' /><span class='tooltiptext'>" . $row['username'] . "</span></div>";
             	                }
             	                echo "</div>";
             	                echo "<div class='container col s12 m10 l10' style='text-align: left;'>" . $row['text'] . "</div>";
