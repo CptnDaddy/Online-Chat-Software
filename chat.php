@@ -21,7 +21,14 @@ if(isset($_POST['changepic'])) {
 	} else {
 		echo "failed";
 	}
-	
+} else if(isset($_POST['createroom'])) {
+	if(createRoom($mysql->getConnection(), $_POST['roomname'], $_POST['maxusers'])) {
+		//success
+	}
+} else if(isset($_POST['editroom'])) {
+	if(editRoom($mysql->getConnection(), $_POST['roomname'], $_POST['maxusers'], $_POST['roomid'])) {
+		//success
+	}
 }
 
 
@@ -68,12 +75,13 @@ if(isset($_POST['changepic'])) {
 					</div>
 				</div>
 			</li>
+			<?php
+				if($_SESSION['admin']) {
+					echo "<a class='waves-effect waves-light btn btn-small modal-trigger' href='#createroom' style='margin: 0; width: 100%;'><i class='material-icons'>add</i></a>";
+				}
+				?>
 			<ul id="rooms" class="collection">
 				<?php
-				// TODO: Datenbank auslesen
-				/*for($i = 1; $i < 20; $i++) {
-				    echo '<a onclick="changeRoom(' . $i . ')" class="collection-item room"><span class="badge">0/20</span>Raum ' . $i . '</a>';
-				}*/
 				listRooms($mysql->getConnection());
 				?>
 		   </ul>
@@ -154,6 +162,51 @@ if(isset($_POST['changepic'])) {
 				<input href="#!" type="submit" value="Hochladen" name="changepic" class="waves-effect waves-green btn-flat">
 			</div>
 		  </form>
+		</div>
+		<div id="createroom" class="modal">
+			<form method=post>
+				<div class="modal-content">
+					<h4>Erstelle einen Raum</h4>
+						<div class="row">
+							<div class="input-field col s6">
+								<input id="roomname" name="roomname" type="text" class="validate">
+								<label for="roomname">Raum Name</label>
+							</div>
+							<div class="input-field col s12">
+								<p class="range-field">
+							      <input type="range" name="maxusers" id="maxusers" min="0" max="100" />
+							    </p>
+								<label for="maxusers">Maximale Benutzer</label>
+						    </div>
+						</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" name="createroom" class="waves-effect waves-green btn-flat">Erstellen</button>
+				</div>
+			</form>
+		</div>
+		<div id="editroom" class="modal">
+			<form method=post>
+				<div class="modal-content">
+					<h4 id="editroomtitletext">Bearbeite den Raum: Laden...</h4>
+						<div class="row">
+							<div class="input-field col s6">
+								<input id="roomname" name="roomname" type="text" class="validate">
+								<label for="roomname">Raum Name</label>
+							</div>
+							<div class="input-field col s12">
+								<p class="range-field">
+							      <input type="range" name="maxusers" id="maxusers" min="0" max="100" />
+							    </p>
+								<label for="maxusers">Maximale Benutzer</label>
+						    </div>
+						    <input type="hidden" name="roomid" id="editroomid" value="">
+						</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" name="editroom" class="waves-effect waves-green btn-flat">Speichern</button>
+				</div>
+			</form>
 		</div>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="js/materialize.min.js"></script>

@@ -28,7 +28,7 @@ function register($con, $username, $email, $password) {
 
 
 function login($con, $username, $password) {
-	$stmt = $con->prepare("select id,email,haspic from users where username = ? and password = ?");
+	$stmt = $con->prepare("select id,email,haspic,admin from users where username = ? and password = ?");
 	$stmt->bind_param("ss", $username, $password);
 
 	$result = $stmt->execute();
@@ -37,6 +37,7 @@ function login($con, $username, $password) {
 	$id = $row["id"];
 	$email = $row["email"];
 	$haspic = $row['haspic'];
+	$admin = $row['admin'];
 	$c = $res->num_rows;
 	$stmt->close();
 	if($c > 0) {
@@ -49,6 +50,10 @@ function login($con, $username, $password) {
 			$_SESSION['haspic'] = true;
 		else
 			$_SESSION['haspic'] = false;
+		if($admin == 1)
+			$_SESSION['admin'] = true;
+		else
+			$_SESSION['admin'] = false;
 		header("Location: chat.php");
 	} else {
 		header("Location: index.php?s=0");
