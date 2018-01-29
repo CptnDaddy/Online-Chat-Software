@@ -11,19 +11,16 @@ if (!isset($_SESSION['username'])) {
 	header("Location: index.php?s=4");
 }
 
-if(isset($POST['changepic'])) {
-	if (move_uploaded_file($_FILES['profilepic']['tmp_name'], "/uploads/" . $_SESSION['username'] . ".png")) {
+if(isset($_POST['changepic'])) {
+	if (move_uploaded_file($_FILES['profilepic']['tmp_name'], "uploads/" . $_SESSION['username'] . ".png")) {
 		$stmt = $mysql->getConnection()->prepare("Update users set haspic = 1 where id = ?");
 		$stmt->bind_param("i", $_SESSION['userid']);
 		$stmt->execute();
 		$stmt->close();
 		$_SESSION['haspic'] = true;
 	} else {
-		//printf("error");
-		print_r($_FILES);
+		echo "failed";
 	}
-	print_r($_FILES);
-	echo "<br><br><br><br><br><br><br><br><br><br><br>";
 	
 }
 
@@ -115,7 +112,11 @@ if(isset($POST['changepic'])) {
 			<form id="sendmessage">
 				<div class="row center">
 					<div class="col m2 l2 hide-on-small-only">
+					<?php  if($_SESSION['haspic']) { ?>
+						<img src="uploads/<?php echo $_SESSION['username']; ?>.png" class="circle" height="100px" />
+						<?php } else { ?>
 						<img src="img/default.png" class="circle" height="100px" />
+						<?php }?>
 					</div>
 					<div class="col s9 m8 l9">
 						<textarea id="chatbox" maxlength=200 name="chattext" class="materialize-textarea"></textarea>
@@ -141,7 +142,8 @@ if(isset($POST['changepic'])) {
 			      <div class="btn">
 			        <span>Datei</span>
 			        <input type="file" name="profilepic" accept=".png,.gif,.jpg,.jpeg">
-			        <input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+<!-- 			        <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /> -->
+<!-- 					<input type="hidden" name="changepic" value="1"> -->
 			      </div>
 			      <div class="file-path-wrapper">
 			        <input class="file-path validate" type="text">

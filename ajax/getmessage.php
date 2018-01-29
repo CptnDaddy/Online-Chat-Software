@@ -28,7 +28,11 @@
     	                echo "<div width='100%' class='container message left mleft z-depth-4'>";
         	                echo "<div class='row'>";
             	                echo "<div class='col m2 l2'>";
-            	                    echo "<a href='' class='tooltipped' data-position='bottom' data-delay='50' data-tooltip='" . $row['username'] . "'><img class='left' src='./img/default.png' width='80' height='80' /></a>";
+            	                if($row['haspic']) {
+            	                	echo "<a href='' class='tooltipped' data-position='bottom' data-delay='50' title='" . $row['username'] . "'><img class='left circle' src='./uploads/" . $row['username'] . ".png' width='80' height='80' /></a>";
+            	                } else {
+            	                    echo "<a href='' class='tooltipped' data-position='bottom' data-delay='50' title='" . $row['username'] . "'><img class='left circle' src='./img/default.png' width='80' height='80' /></a>";
+            	                }
             	                echo "</div>";
             	                echo "<div class='container col s12 m10 l10' style='text-align: left;'>" . $row['text'] . "</div>";
         	                echo "</div>";
